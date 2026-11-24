@@ -91,6 +91,11 @@ nav ul a:hover{color:var(--g)}
 .quote img{border-radius:18px;background:#fff;padding:14px}
 .quote blockquote{margin:22px 4px 4px;font-family:Sacramento,cursive;color:var(--gd);font-size:clamp(30px,3.4vw,40px);line-height:1.15;text-wrap:balance}
 
+.feed{background:#fff}
+.feed .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:36px;align-items:start}
+.fbbox{background:var(--mint);border-radius:24px;padding:14px;display:flex;justify-content:center;min-height:200px}
+.fbbox iframe{border:0;border-radius:12px;background:#fff;max-width:100%}
+@media(max-width:820px){.feed .wrap{grid-template-columns:minmax(0,1fr)}}
 /* order */
 .order{background:var(--g);color:#fff}
 .order h2,.order p{color:#fff}
@@ -138,6 +143,7 @@ footer .script{font-size:32px;display:block;margin-bottom:4px}
    <li><a href="#gallery">Gallery</a></li>
    <li><a href="#how">How it works</a></li>
    <li><a href="#about">My story</a></li>
+   <li><a href="#latest">Latest</a></li>
    <li><a href="#order">Order</a></li>
   </ul>
  </nav>
@@ -206,6 +212,17 @@ footer .script{font-size:32px;display:block;margin-bottom:4px}
  </div>
 </section>
 
+<section class="band feed" id="latest">
+ <div class="wrap">
+  <div>
+   <h2>Latest from <span class="script">Facebook</span></h2>
+   <p>See what Lesya has been making lately. New creatures are posted on Facebook first.</p>
+   <a class="btn ghost" href="https://www.facebook.com/profile.php?id=100087590748304">Follow on Facebook</a>
+  </div>
+  <div class="fbbox" id="fbbox"></div>
+ </div>
+</section>
+
 <section class="band order" id="order">
  <div class="wrap">
   <div>
@@ -237,6 +254,9 @@ footer .script{font-size:32px;display:block;margin-bottom:4px}
 <script>
 {
 const WA='27659056300';
+const fbb=document.getElementById('fbbox');
+if(fbb){const w=Math.max(280,Math.min(500,fbb.clientWidth-28)),h=620;
+fbb.innerHTML=`<iframe title="Cuddle Creatures Facebook posts" width="${w}" height="${h}" loading="lazy" allow="encrypted-media" src="https://www.facebook.com/plugins/page.php?href=${encodeURIComponent('https://www.facebook.com/profile.php?id=100087590748304')}&tabs=timeline&width=${w}&height=${h}&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"></iframe>`;}
 const waLink=t=>'https://wa.me/27659056300?text='+encodeURIComponent(t);
 const pics=[['unicorns','Unicorns'],['elephant','Pink elephant'],['teddy-blanket','Teddy and blanket set'],['rainbow-unicorn','Rainbow curls unicorn'],['giraffe','Giraffe'],['sheep','Fluffy sheep'],['pink-bunny','Long-leg bunny'],['lion','Lion'],['monkey','Patchwork monkey'],['penguin','Penguin'],['teddy','Teddy bear'],['llamas','Mini llamas'],['cow','Cow'],['christmas','Christmas friends'],['puppy','Puppy'],['pig','Piglet'],['rhino','Rhino'],['xmas-llamas','Christmas llamas'],['dino','Dinosaur'],['bees','Bumblebees'],['llama','Llama'],['octopus','Baby octopuses'],['hedgehog','Hedgehog'],['elf','Christmas elf']];
 const gal=document.getElementById('gal');
