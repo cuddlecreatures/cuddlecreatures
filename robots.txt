@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cuddlecreatures.co.za/sitemap.xml
